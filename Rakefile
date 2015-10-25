@@ -2,8 +2,20 @@ require 'bundler/gem_tasks'
 require 'cucumber'
 require 'cucumber/rake/task'
 
-Cucumber::Rake::Task.new(:features) do |t|
-  t.cucumber_opts = '-f pretty -f html -o /tmp/exam4_test_report.html'
+namespace :report do
+  task :build do
+    sh 'rm -rf build'
+    sh 'middleman build'
+  end
 end
 
-task default: :features
+namespace :test do
+  Cucumber::Rake::Task.new(:exam4) do |t|
+    t.cucumber_opts = '-f pretty '  +
+                      '-f html '    +
+                      '-o /tmp/exam4_test_report.html'
+  end
+end
+
+task test:    ['test:exam4', 'report:build']
+task default: :test
