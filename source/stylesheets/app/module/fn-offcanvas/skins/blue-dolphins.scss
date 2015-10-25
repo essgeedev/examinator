@@ -1,0 +1,5 @@
+.title {
+  @extend %tab-bar-title !optional;
+
+  font-family: 'Rock Salt', cursive;
+}

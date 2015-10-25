@@ -1,0 +1,23 @@
+.post-simple {
+  @extend %post-style !optional;
+
+  .header,
+  .content {
+    border:  1px solid #aaa;
+  }
+
+  .header {
+    font-weight: bold;
+  }
+
+  .content {
+  }
+
+  span.post-date {
+    font-family: 'Inconsolata';
+    font-size:   1.25em;
+  }
+
+  span.time {
+  }
+}

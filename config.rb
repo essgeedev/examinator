@@ -1,72 +1,42 @@
-###
-# Compass
-###
+require 'awesome_print'
 
-# Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+lib_path = File.dirname(__FILE__) + "/lib"
+$LOAD_PATH.unshift lib_path
+puts '== Added dir to load path'
+print "== "; ap lib_path
 
-###
-# Page options, layouts, aliases and proxies
-###
+set  :partials_dir,   'template'
+set  :css_dir,        'stylesheets'
+set  :js_dir,         'javascripts'
+set  :images_dir,     'images'
+set  :fonts_dir,      'fonts'
 
-# Per-page layout changes:
-#
-# With no layout
-# page "/path/to/file.html", :layout => false
-#
-# With alternative layout
-# page "/path/to/file.html", :layout => :otherlayout
-#
-# A path which all have the same layout
-# with_layout :admin do
-#   page "/admin/*"
-# end
+sprockets.append_path 'javascripts/lib'
+sprockets.append_path 'javascripts/vendor'
 
-# Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
-# proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
-#  :which_fake_page => "Rendering a fake page with a local variable" }
+sprockets.append_path 'stylesheets/lib'
+sprockets.append_path 'stylesheets/vendor'
 
-###
-# Helpers
-###
+sprockets.append_path File.join root, 'foundation/js/foundation'
+asset_paths = sprockets.append_path File.join root, 'foundation/scss'
 
-# Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
+puts
+puts '== Asset paths'
+puts
+ap   asset_paths
+puts
 
-# Reload the browser automatically whenever files change
-# configure :development do
-#   activate :livereload
-# end
+activate :directory_indexes
 
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+configure :development do
+  activate :livereload
+end
 
-set :css_dir, 'stylesheets'
-
-set :js_dir, 'javascripts'
-
-set :images_dir, 'images'
-
-# Build-specific configuration
 configure :build do
-  # For example, change the Compass output style for deployment
-  # activate :minify_css
+  # don't compile partials
+  # ignore   '/template/content_with_header.haml'
 
-  # Minify Javascript on build
-  # activate :minify_javascript
-
-  # Enable cache buster
-  # activate :asset_hash
-
-  # Use relative URLs
-  # activate :relative_assets
-
-  # Or use a different image path
-  # set :http_prefix, "/Content/images/"
+  activate :minify_css
+  activate :minify_javascript
+  activate :asset_hash
 end
