@@ -4,7 +4,7 @@
 //= require lib/body
 //= require_self
 
-$(document).foundation();
+$(document).foundation('topbar', 'reflow');
 
 $( document ).ready(function() {
 });

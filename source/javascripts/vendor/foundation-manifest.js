@@ -2,3 +2,4 @@
 
 //= require foundation
 //= require foundation.offcanvas
+//= require foundation.topbar.js

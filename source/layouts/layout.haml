@@ -17,5 +17,32 @@
 
 
   %body
-    = yield
+    .contain-to-grid.sticky
+      %nav.top-bar{'data-topbar' => true, role: 'navigation', 'data-options' => 'sticky_on: large'}
+        %ul.title-area.right
+          %li.name
+            %h1
+              %a{href:'/'} G4CI
+          %li.toggle-topbar.menu-icon
+
+        %section.top-bar-section.left
+          %ul
+            %li
+              %a{href:'/'} Home
+            %li
+              %a{href:'/test_report'} Report
+    .row
+      .columns.small-12
+        = yield
+
+    .row
+      .columns.small-12
+        %h1 footer
+
     = javascript_include_tag  "app/body"
+
+
+
+
+
+

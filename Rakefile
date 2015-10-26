@@ -13,7 +13,7 @@ namespace :test do
   Cucumber::Rake::Task.new(:exam4) do |t|
     t.cucumber_opts = '-f pretty '  +
                       '-f html '    +
-                      '-o /tmp/exam4_test_report.html'
+                      '-o source/test_report/index.html'
   end
 end
 
