@@ -1,4 +1,4 @@
-@perfect_patty
+@pp
 Feature: Notice of Instructions
   As Perfect Patty
   I want to complete the modal

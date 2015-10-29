@@ -1,4 +1,4 @@
-@perfect_patty
+@pp
 Feature: Exam Mode
   As Perfect Patty
   I want to complete the modal
