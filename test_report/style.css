@@ -1,0 +1,19 @@
+/* Base */
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+/* Layout */
+.l-fixed {
+  width:   1000px;
+  margin:  10px auto;
+}
+
+/* Visual UI */
+.stripe {
+  background:    #bbb;
+  padding-top:    10px;
+  padding-bottom: 10px;
+}
+
