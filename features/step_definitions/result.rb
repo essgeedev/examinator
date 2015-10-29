@@ -6,6 +6,6 @@ Given(/:fail$/) do
   fail
 end
 
-Given(/^I click Continue$/) do
+Given(/:pending$/) do
   pending
 end
