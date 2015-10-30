@@ -1,24 +1,23 @@
 /* Base */
 body {
-  color:       #555;
+        color: #555;
   font-family: sans-serif;
-  margin:      0;
+       margin: 0;
 }
 
 /* Layout */
+.l-fixed {
+   width:  1000px;
+  margin:  30px auto 10px auto;
+}
+
 #content {
   margin-bottom: 50px;
 }
 
-.l-fixed {
-  width:   1000px;
-  margin:  30px auto 10px auto;
-}
-
-/* Visual UI */
+/* UI */
 .stripe {
-  background:     #bbb;
-  padding-top:    10px;
+      background: #bbb;
+     padding-top: 10px;
   padding-bottom: 10px;
 }
-
