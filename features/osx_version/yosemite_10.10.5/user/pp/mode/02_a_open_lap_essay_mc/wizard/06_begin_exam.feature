@@ -8,7 +8,7 @@ Background:
   And   I am in OPEN LAP Essay MC mode :pass
 
 Scenario:
-  Given I see Instutution: Erewhon School of Law :pass
+  Given I see Institution: Erewhon School of Law :pass
   And   I see Exam ID: 1234 :pass
   And   I see Course: OPEN LAP Easy MC :pass
   And   I see Duration: 4 hours; Alerts: 5 Minutes, 15 Minutes, 1 Hour :pass
