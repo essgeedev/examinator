@@ -11,7 +11,7 @@ Background:
 Scenario: Complete I am on the Exam ID; Course modal
   Given I enter 1234 in the 1st Exam ID field :pass
   And   I enter 1234 in the 2nd Exam ID field :pass
-  And   I enter First Last in the Full Name field :pass
+  And   I enter Patty Perfect in the Full Name field :pass
   And   I select OPEN LAP Essay MC from 1st Course Dropdown :pass
   And   I select OPEN LAP Essay MC from 2nd Course Dropdown :pass
   When  I click the Next Button :pass
