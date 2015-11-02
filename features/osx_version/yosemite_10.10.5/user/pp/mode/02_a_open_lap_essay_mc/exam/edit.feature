@@ -10,14 +10,20 @@ Background:
 @pp
 Scenario: Undo
 
+@pp
 Scenario: Redo
 
+@pp
 Scenario: Cut
 
+@pp
 Scenario: Copy
 
+@pp
 Scenario: Paste
 
+@pp
 Scenario: Delete
 
+@pp
 Scenario: Select All
