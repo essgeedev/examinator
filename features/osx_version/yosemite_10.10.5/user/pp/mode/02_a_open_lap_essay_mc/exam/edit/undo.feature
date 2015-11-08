@@ -1,7 +1,7 @@
-Feature: Edit Exam
+Feature: Undo
 
   As Perfect Patty
-  I want to undo a paragraph edit
+  I want to undo an edit
   So my answer is correct
 
 Background:
@@ -10,7 +10,11 @@ Background:
   And   I have edited the paragraph of text :pending
 
 @pp
-Scenario: Undo paragraph edit
-  And   I select the paragraph :pending
+Scenario: sentence
+  Given I select a sentence in the paragraph :pending
   And   I type CMD-Z :pending
-  Then
+
+@pp
+Scenario: paragraph
+  Given I select the paragraph :pending
+  And   I type CMD-Z :pending
