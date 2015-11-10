@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+lib      = File.expand_path('../../lib', __FILE__); $LOAD_PATH.unshift(lib)
+require 'awesome_print'
+require 'erb'
+require 'examinator'
+
+template_dir = File.expand_path('../../template', __FILE__)
+templates    = Dir.glob(template_dir + "/*.erb")
+features_dir = File.expand_path('../../features/yosemite_10.10.5', __FILE__)
+
+MODES = ['CLOSED', 'OPEN LAP', 'LAPNET', 'TH', 'UNSPEC']
+TYPES = ['Essay MC', 'MC only', 'Essay only']
+
+def slug(mode, type)
+  "#{mode} #{type}".downcase.gsub(/\W+/, '_')
+end
+
+MODES.each do |mode|
+  TYPES.each do |type|
+    mode_type_dir = features_dir + '/' + slug(mode, type)
+
+
+    # templates.each do |f|
+    #   feature_template = File.read(f)
+    #           renderer = ERB.new(feature_template)
+    #   puts    rendered = renderer.result(binding)
+    #   puts
+    # end
+  end
+end

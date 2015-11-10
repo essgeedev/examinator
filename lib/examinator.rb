@@ -1,3 +1,4 @@
+require 'erb'
 require "examinator/version"
 
 module Examinator
