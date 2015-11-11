@@ -5,7 +5,7 @@ Background:
 
 @pp
 Scenario: Patty's path to success
-  Given I see OPEN in the Type selected field :pending
-  And   I see LAPTOP in the OPEN Exam Mode access field :pending
+  Given I see UNSPEC in the Type selected field :pending
+  And   I see TODO: FILL IN THIS PART :pending
   And   I click Confirm Exam Mode checkbox :pending
   Then  I see the Almost ready modal :pending

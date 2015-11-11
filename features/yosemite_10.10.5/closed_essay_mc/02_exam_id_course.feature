@@ -8,12 +8,12 @@ Scenario: Patty's path to success
   Given I enter 1234 in 1st Exam ID field :pending
   And   I enter 1234 in 2nd Exam ID field :pending
   And   I enter Perfect Patty in the Full Name field :pending
-  And   I select <%= mode %> from 1st Course dropdown :pending
-  And   I select <%= mode %> from 2nd Course dropdown :pending
+  And   I select CLOSED Essay MC from 1st Course dropdown :pending
+  And   I select CLOSED Essay MC from 2nd Course dropdown :pending
   And   I click Next :pending
   Then  I see Re-confirm carefully... :pending
   And   I see Exam ID 1234 :pending
-  And   I see <%= mode %> :pending
+  And   I see CLOSED Essay MC :pending
   And   I click Check box :pending
   And   I click OK :pending
   Then  I see the Exam time; Font size modal :pending

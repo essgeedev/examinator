@@ -4,27 +4,34 @@ require 'awesome_print'
 require 'erb'
 require 'examinator'
 
-template_dir = File.expand_path('../../template', __FILE__)
-templates    = Dir.glob(template_dir + "/*.erb")
-features_dir = File.expand_path('../../features/yosemite_10.10.5', __FILE__)
+templates_dir = File.expand_path('../../templates', __FILE__)
+templates     = Dir[templates_dir + "/*.erb"]
 
-MODES = ['CLOSED', 'OPEN LAP', 'LAPNET', 'TH', 'UNSPEC']
-TYPES = ['Essay MC', 'MC only', 'Essay only']
+features_dir = File.expand_path('../../features/yosemite_10.10.5', __FILE__)
 
 def slug(mode, type)
   "#{mode} #{type}".downcase.gsub(/\W+/, '_')
 end
 
+MODES = ['CLOSED', 'OPEN LAP', 'LAPNET', 'TH', 'UNSPEC']
+TYPES = ['Essay MC', 'MC only', 'Essay only']
+
 MODES.each do |mode|
   TYPES.each do |type|
-    mode_type_dir = features_dir + '/' + slug(mode, type)
+    target_dir = features_dir + '/' + slug(mode, type)
+    Dir.mkdir(target_dir) unless Dir.exist?(target_dir)
 
+    Dir.entries(target_dir)[2..-1].each do |f|
+      File.delete(target_dir + '/' + f)
+    end
 
-    # templates.each do |f|
-    #   feature_template = File.read(f)
-    #           renderer = ERB.new(feature_template)
-    #   puts    rendered = renderer.result(binding)
-    #   puts
-    # end
+    templates.each do |template|
+      feature_template = File.read(template)
+      renderer         = ERB.new(feature_template)
+      rendered         = renderer.result(binding)
+
+      target = target_dir + '/' + File.basename(template).gsub(/\.erb/,'')
+      File.write(target, rendered)
+    end
   end
 end
