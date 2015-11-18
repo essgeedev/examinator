@@ -1,0 +1,2 @@
+require 'fuubar'
+require 'examinator'

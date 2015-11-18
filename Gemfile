@@ -9,4 +9,6 @@ end
 
 group :test do
   gem 'cucumber'
+  gem 'fuubar'
+  gem 'rspec'
 end
