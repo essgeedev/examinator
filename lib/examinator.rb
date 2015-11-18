@@ -1,6 +1,6 @@
 require 'erb'
-require "examinator/version"
+require 'examinator/version'
+require 'examinator/test'
 
 module Examinator
-  # Your code goes here...
 end
