@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+lib      = File.expand_path('../../lib', __FILE__); $LOAD_PATH.unshift(lib)
+require 'awesome_print'
+require 'examinator'
+
+
+module Examinator
+
+courses = Exam4.courses.map { |c| Course.new name: c }
+
+courses.each do |c|
+  puts
+  ap c.name
+  ap c.mode
+  ap c.type
+  ap c.slug
+  puts
+end
+
+end
