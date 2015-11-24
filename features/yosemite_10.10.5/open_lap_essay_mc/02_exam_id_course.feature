@@ -1,19 +1,19 @@
 Feature: Exam ID; Course
 
 Background:
-  Given I'm on the Exam ID; Course modal :pass
+  Given I'm on the Exam ID; Course modal :pending
 
 @pp
 Scenario: Patty's path to success
-  Given I enter 1234 in 1st Exam ID field :pass
-  And   I enter 1234 in 2nd Exam ID field :pass
-  And   I enter Perfect Patty in the Full Name field :pass
-  And   I select OPEN LAP Essay MC from 1st Course dropdown :pass
-  And   I select OPEN LAP Essay MC from 2nd Course dropdown :pass
-  And   I click Next :pass
-  Then  I see Re-confirm carefully... :pass
-  And   I see Exam ID 1234 :pass
-  And   I see OPEN LAP Essay MC :pass
-  And   I click Check box :pass
-  And   I click OK :pass
-  Then  I see the Exam time; Font size modal :pass
+  Given I enter 1234 in 1st Exam ID field :pending
+  And   I enter 1234 in 2nd Exam ID field :pending
+  And   I enter Perfect Patty in the Full Name field :pending
+  And   I select OPEN LAP Essay MC from 1st Course dropdown :pending
+  And   I select OPEN LAP Essay MC from 2nd Course dropdown :pending
+  When  I click Next :pending
+  Then  I see Re-confirm carefully... :pending
+  And   I see Exam ID 1234 :pending
+  And   I see OPEN LAP Essay MC :pending
+  When  I click Check box :pending
+  And   I click OK :pending
+  Then  I see the Exam time; Font size modal :pending

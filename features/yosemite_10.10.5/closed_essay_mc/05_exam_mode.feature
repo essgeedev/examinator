@@ -1,10 +1,10 @@
 Feature: Exam mode
 
 Background:
-  Given I'm on the Exam mode modal :pass
+  Given I'm on the Exam mode modal :pending
 
 @pp
 Scenario: Patty's path to success
-  Given I see CLOSED in the Type selected field :pass
-  And   I click Confirm Exam Mode checkbox :pass
-  Then  I see the Almost ready modal :pass
+  Given I see CLOSED in the Mode field :pending
+  And   I click Confirm Exam Mode checkbox :pending
+  Then  I see the Almost ready modal :pending

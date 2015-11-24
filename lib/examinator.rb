@@ -1,6 +1,3 @@
-require 'erb'
+require 'examinator/patty'
 require 'examinator/version'
-require 'examinator/test'
 
-module Examinator
-end

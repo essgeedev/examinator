@@ -10,10 +10,10 @@ Scenario: Patty's path to success
   And   I enter Perfect Patty in the Full Name field :pending
   And   I select <%= mode + ' ' + type %> from 1st Course dropdown :pending
   And   I select <%= mode + ' ' + type %> from 2nd Course dropdown :pending
-  And   I click Next :pending
+  When  I click Next :pending
   Then  I see Re-confirm carefully... :pending
   And   I see Exam ID 1234 :pending
   And   I see <%= mode + ' ' + type %> :pending
-  And   I click Check box :pending
+  When  I click Check box :pending
   And   I click OK :pending
   Then  I see the Exam time; Font size modal :pending

@@ -13,11 +13,25 @@ def slug(mode, type)
   "#{mode} #{type}".downcase.gsub(/\W+/, '_')
 end
 
-MODES = ['CLOSED', 'OPEN LAP', 'LAPNET', 'TH', 'UNSPEC']
+MODES = ['CLOSED', 'OPEN LAP', 'LAPNET', 'TAKEHOME', 'UNSPEC']
 TYPES = ['Essay MC', 'MC only', 'Essay only']
+
+ACCESS = {
+  'CLOSED'   => '',
+
+  'OPEN LAP' => "\n  And   I see access LAPTOP",
+
+  'LAPNET'   => "\n  And   I see access LAPTOP" +
+                "\n  And   I see access NETWORK",
+
+  'TAKEHOME' => '',
+
+  'UNSPEC'   => ''
+}
 
 MODES.each do |mode|
   TYPES.each do |type|
+    ap slug(mode, type)
     target_dir = features_dir + '/' + slug(mode, type)
     Dir.mkdir(target_dir) unless Dir.exist?(target_dir)
 
@@ -26,6 +40,7 @@ MODES.each do |mode|
     end
 
     templates.each do |template|
+      access           = ACCESS[mode]
       feature_template = File.read(template)
       renderer         = ERB.new(feature_template)
       rendered         = renderer.result(binding)
