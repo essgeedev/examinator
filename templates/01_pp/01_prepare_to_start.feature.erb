@@ -6,7 +6,7 @@ Feature: Prepare to start new exam
 
 Background:
   Given My wifi (Aiport) is on :pending
-  Given Exam4 is open :pending
+  And   Exam4 is open :pending
   And   I'm on the "1 > Start or save" modal :pending
   And   "Prepare to start new exam" is selected :pending
 
@@ -26,7 +26,3 @@ Scenario: ScreenShield
 Scenario: Next
   When  I click Next :pending
   Then  I see the "Exam ID; Course" modal :pending
-
-Scenario: Quit
-  When  I type CMD-Q :pending
-  Then  I see Exam4 close :pending
