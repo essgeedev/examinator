@@ -1,7 +1,19 @@
 Feature: Exam
 
+  As Perfect Patty
+  I want to write my exam
+  So I can be a lawyer
+
 Background:
-  Given I'm writing the exam :pending
+  Given Exam4 is open :pending
+  And   I see the exam editor :pending
+  And   I entered "4" in the "3 > Exam time; Font size" modal "Hours" field :pending
+  And   I clicked "5 minutes remain" in the "3 > Exam time; Font size" modal  :pending
+  And   I clicked "15 minutes remain" in the "3 > Exam time; Font size" modal  :pending
+  And   I clicked "1 hour remains" in the "3 > Exam time; Font size" modal :pending
+  And   I clicked "Large font" in the "3 > Exam time; Font size" modal :pending
+  And   I clicked "Reversed (white on black)" in the "3 > Exam time; Font size" modal :pending
+  And   I entered "4" in the "3 > Exam time; Font size" modal "Auto-insert separator(s)" field :pending
   And   I type 300k characters for 100 pages :pending
 
 Scenario: Document statistics
