@@ -5,14 +5,14 @@ Feature: 6 > Almost ready to begin exam...
   So I can begin an exam
 
 Background:
-  Given Exam4 is open :pending
-  And   I'm on the "6 > Almost ready to begin exam..." modal :pending
-  And   I see Institution: Erewhon School of Law :pending
-  And   I see Exam ID:     1234 :pending
-  And   I see Course:      CLOSED MC only :pending
-  And   I see Duration:    4 hours; Allerts: 5 Minutes, 15 Minutes, 1 Hour :pending
-  And   I see Full Name:   Perfect Patty :pending
+  Given Exam4 is open :pass
+  And   I'm on the "6 > Almost ready to begin exam..." modal :pass
+  And   I see Institution: Erewhon School of Law :pass
+  And   I see Exam ID:     1234 :pass
+  And   I see Course:      CLOSED MC only :pass
+  And   I see Duration:    4 hours; Allerts: 5 Minutes, 15 Minutes, 1 Hour :pass
+  And   I see Full Name:   Perfect Patty :pass
 
 Scenario: Begin Exam
-  And   I click Begin Exam :pending
-  Then  I see the Exam4 editor :pending
+  And   I click Begin Exam :pass
+  Then  I see the Exam4 editor :pass

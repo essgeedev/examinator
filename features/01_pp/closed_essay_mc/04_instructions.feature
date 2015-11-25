@@ -5,11 +5,11 @@ Feature: 4 > Notice of Instructions modal
   So I can begin an exam
 
 Background:
-  Given Exam4 is open :pending
-  And   I'm on the "4 > Notice of Instructions" modal :pending
-  And   I see all the instructions :pending
+  Given Exam4 is open :pass
+  And   I'm on the "4 > Notice of Instructions" modal :pass
+  And   I see all the instructions :pass
 
 Scenario: Next
-  Given I click "Got it?" :pending
-  When  I click Next :pending
-  Then  I see the "5 > Exam Mode" modal :pending
+  Given I click "Got it?" :pass
+  When  I click Next :pass
+  Then  I see the "5 > Exam Mode" modal :pass

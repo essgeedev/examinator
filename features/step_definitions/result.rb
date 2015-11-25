@@ -1,5 +1,5 @@
 Given(/:pass$/) do
-  pass
+  true
 end
 
 Given(/:fail$/) do

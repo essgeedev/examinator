@@ -5,19 +5,19 @@ Feature: 2 > Exam ID; Course modal
   So I can begin an exam
 
 Background:
-  Given Exam4 is open :pending
-  And   I'm on the "2 > Exam ID; Course" modal :pending
-  And   I enter "1234" in 1st Exam ID field :pending
-  And   I enter "1234" in 2nd Exam ID field :pending
-  And   I enter "Perfect Patty" in the "Full Name" field :pending
-  And   I select "UNSPEC MC only" from 1st Course dropdown :pending
-  And   I select "UNSPEC MC only" from 2nd Course dropdown :pending
+  Given Exam4 is open :pass
+  And   I'm on the "2 > Exam ID; Course" modal :pass
+  And   I enter "1234" in 1st Exam ID field :pass
+  And   I enter "1234" in 2nd Exam ID field :pass
+  And   I enter "Perfect Patty" in the "Full Name" field :pass
+  And   I select "UNSPEC MC only" from 1st Course dropdown :pass
+  And   I select "UNSPEC MC only" from 2nd Course dropdown :pass
 
 Scenario: Next
-  When  I click Next :pending
-  Then  I see "Re-confirm carefully..." :pending
-  And   I see "Exam ID 1234" :pending
-  And   I see "Course UNSPEC MC only" :pending
-  When  I click "Check box to re-confirm" :pending
-  And   I click OK :pending
-  Then  I see the "3 > Exam time; Font size" modal :pending
+  When  I click Next :pass
+  Then  I see "Re-confirm carefully..." :pass
+  And   I see "Exam ID 1234" :pass
+  And   I see "Course UNSPEC MC only" :pass
+  When  I click "Check box to re-confirm" :pass
+  And   I click OK :pass
+  Then  I see the "3 > Exam time; Font size" modal :pass
