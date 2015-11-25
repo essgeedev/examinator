@@ -1,52 +1,58 @@
 #!/usr/bin/env ruby
 lib      = File.expand_path('../../lib', __FILE__); $LOAD_PATH.unshift(lib)
-require 'awesome_print'
 require 'erb'
+require 'awesome_print'
 require 'examinator'
 
 templates_dir = File.expand_path('../../templates', __FILE__)
-templates     = Dir[templates_dir + "/*.erb"]
+features_dir  = File.expand_path('../../features', __FILE__)
 
-features_dir = File.expand_path('../../features/yosemite_10.10.5', __FILE__)
+courses = Examinator::Exam4.courses.map { |c| Examinator::Course.new name: c }
 
-def slug(mode, type)
-  "#{mode} #{type}".downcase.gsub(/\W+/, '_')
-end
+templates_pp = Dir[templates_dir + "/01_pp/*.erb"]
+personas = %w[01_pp 02_cc]
 
-MODES = ['CLOSED', 'OPEN LAP', 'LAPNET', 'TAKEHOME', 'UNSPEC']
-TYPES = ['Essay MC', 'MC only', 'Essay only']
+personas.each do |persona|
+  templates = Dir[templates_dir + "/#{persona}/*.erb"]
 
-ACCESS = {
-  'CLOSED'   => '',
+  courses.each do |c|
+    target_dir = features_dir + "/#{persona}/" + c.slug
 
-  'OPEN LAP' => "\n  And   I see access LAPTOP",
-
-  'LAPNET'   => "\n  And   I see access LAPTOP" +
-                "\n  And   I see access NETWORK",
-
-  'TAKEHOME' => '',
-
-  'UNSPEC'   => ''
-}
-
-MODES.each do |mode|
-  TYPES.each do |type|
-    ap slug(mode, type)
-    target_dir = features_dir + '/' + slug(mode, type)
     Dir.mkdir(target_dir) unless Dir.exist?(target_dir)
 
     Dir.entries(target_dir)[2..-1].each do |f|
       File.delete(target_dir + '/' + f)
     end
 
-    templates.each do |template|
-      access           = ACCESS[mode]
-      feature_template = File.read(template)
-      renderer         = ERB.new(feature_template)
-      rendered         = renderer.result(binding)
+    templates.each do |t|
+      template = File.read(t)
+      rendered = ERB.new(template).result(binding)
 
-      target = target_dir + '/' + File.basename(template).gsub(/\.erb/,'')
+      target = target_dir + '/' + File.basename(t).gsub(/\.erb/,'')
       File.write(target, rendered)
     end
   end
 end
+
+
+# MODES.each do |mode|
+#   TYPES.each do |type|
+#     ap slug(mode, type)
+#     target_dir = features_dir + '/' + slug(mode, type)
+#     Dir.mkdir(target_dir) unless Dir.exist?(target_dir)
+
+#     Dir.entries(target_dir)[2..-1].each do |f|
+#       File.delete(target_dir + '/' + f)
+#     end
+
+#     templates.each do |template|
+#       access           = ACCESS[mode]
+#       feature_template = File.read(template)
+#       renderer         = ERB.new(feature_template)
+#       rendered         = renderer.result(binding)
+
+#       target = target_dir + '/' + File.basename(template).gsub(/\.erb/,'')
+#       File.write(target, rendered)
+#     end
+#   end
+# end

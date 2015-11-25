@@ -10,14 +10,14 @@ Background:
   And   I enter "1234" in 1st Exam ID field :pending
   And   I enter "1234" in 2nd Exam ID field :pending
   And   I enter "Perfect Patty" in the "Full Name" field :pending
-  And   I select "<%= c.name %>" from 1st Course dropdown :pending
-  And   I select "<%= c.name %>" from 2nd Course dropdown :pending
+  And   I select "CLOSED Essay only" from 1st Course dropdown :pending
+  And   I select "CLOSED Essay only" from 2nd Course dropdown :pending
 
 Scenario: Next
   When  I click Next :pending
   Then  I see "Re-confirm carefully..." :pending
   And   I see "Exam ID 1234" :pending
-  And   I see "Course <%= c.name %>" :pending
+  And   I see "Course CLOSED Essay only" :pending
   When  I click "Check box to re-confirm" :pending
   And   I click OK :pending
   Then  I see the "3 > Exam time; Font size" modal :pending

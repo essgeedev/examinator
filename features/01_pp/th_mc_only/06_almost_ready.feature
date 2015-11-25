@@ -9,7 +9,7 @@ Background:
   And   I'm on the "6 > Almost ready to begin exam..." modal :pending
   And   I see Institution: Erewhon School of Law :pending
   And   I see Exam ID:     1234 :pending
-  And   I see Course:      <%= c.name %> :pending
+  And   I see Course:      TH MC only :pending
   And   I see Duration:    4 hours; Allerts: 5 Minutes, 15 Minutes, 1 Hour :pending
   And   I see Full Name:   Perfect Patty :pending
 

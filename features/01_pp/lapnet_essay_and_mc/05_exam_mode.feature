@@ -7,9 +7,10 @@ Feature: 5 > Exam Mode
 Background:
   Given Exam4 is open :pending
   And   I'm on the "5 > Exam Mode" modal :pending
-  And   I see "<%= c.mode %>" in the "Type selected Exam Mode here" field :pending
-<%= c.access %>
+  And   I see "LAPNET" in the "Type selected Exam Mode here" field :pending
+  And   I see "LAPTOP (default)" in the access field :pending
+  And   I see "NETWORK" in the 2nd access field :pending
 
 Scenario: Next
-  When  I click "Check box to confirm Exam Mode is <%= c.name %>" :pending
+  When  I click "Check box to confirm Exam Mode is LAPNET Essay and MC" :pending
   Then  I see the "6 > Almost ready to begin exam..." modal :pending
