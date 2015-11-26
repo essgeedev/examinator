@@ -24,7 +24,16 @@ personas.each do |persona|
       File.delete(target_dir + '/' + f)
     end
 
-    templates.each do |t|
+    if c.slug.match(/essay_only/)
+      target_templates = templates.reject { |t| t.match(/mc\.feature/) }
+      ap target_templates
+    elsif c.slug.match(/mc_only/)
+      target_templates = templates.reject { |t| t.match(/essay\.feature/) }
+    else
+      target_templates = templates
+    end
+
+    target_templates.each do |t|
       template = File.read(t)
       rendered = ERB.new(template).result(binding)
 

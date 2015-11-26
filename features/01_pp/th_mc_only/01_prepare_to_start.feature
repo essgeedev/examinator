@@ -5,24 +5,24 @@ Feature: Prepare to start new exam
   So I can begin an exam
 
 Background:
-  Given My wifi (Aiport) is on :pass
-  And   Exam4 is open :pass
-  And   I'm on the "1 > Start or save" modal :pass
-  And   "Prepare to start new exam" is selected :pass
+  Given My wifi (Aiport) is on :pending
+  And   Exam4 is open :pending
+  And   I'm on the "1 > Start or save" modal :pending
+  And   "Prepare to start new exam" is selected :pending
 
 Scenario: Check network connection
-  When  I click "Check network connection" :pass
-  Then  I see the "Check Network Connection" modal appear :pass
-  And   I see "Network connection OK" :pass
-  When  I click OK :pass
-  Then  I see the "Check Network Connection" modal disappear :pass
+  When  I click "Check network connection" :pending
+  Then  I see the "Check Network Connection" modal appear :pending
+  And   I see "Network connection OK" :pending
+  When  I click OK :pending
+  Then  I see the "Check Network Connection" modal disappear :pending
 
 Scenario: ScreenShield
-  When  I click ScreenShield :pass
-  Then  I seen the green ScreenShield :pass
-  And   I click the green ScreenShield :pass
-  Then  I see the green ScreenShield disappear :pass
+  When  I click ScreenShield :pending
+  Then  I seen the green ScreenShield :pending
+  And   I click the green ScreenShield :pending
+  Then  I see the green ScreenShield disappear :pending
 
 Scenario: Next
-  When  I click Next :pass
-  Then  I see the "Exam ID; Course" modal :pass
+  When  I click Next :pending
+  Then  I see the "Exam ID; Course" modal :pending
